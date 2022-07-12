@@ -190,7 +190,6 @@ class DashboardView(TemplateView):
             data['error'] = str(e)
         return JsonResponse(data)
 
-
 '''
 Intenta traer el rol con nombre {name}. Si no existe lo crea y lo retorna.
 '''
@@ -567,6 +566,7 @@ def get_map_json(request, **kwargs):
             Avg('value'))['value__avg']
         data.append({
             'name': f'{location.city.name}, {location.state.name}, {location.country.name}',
+            'user': f'{location.user}'
             'lat': location.lat,
             'lng': location.lng,
             'population': stations.count(),
