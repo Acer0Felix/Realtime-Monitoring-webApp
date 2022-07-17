@@ -47,7 +47,7 @@ def realtime_data(request):
                     userParam, cityName, stateName, countryName
                 )
             else:
-                data["error"] = "Ha ocurrido un error"
+                data["err   r"] = "Ha ocurrido un error"
         except Exception as e:
             data["error"] = str(e)
         return JsonResponse(data)
